@@ -1,8 +1,6 @@
 <script src="https://unpkg.com/vue"></script>
-
 <style>
-
-    #app{
+    #app {
         display: flex;
         justify-content: space-around;
     }
@@ -24,18 +22,18 @@
     .c3 {
         background-color: blue;
     }
-
 </style>
 
 <div id="app">
-    <div class="demo" :class="{c1: aplicarC1}" @click="aplicarC1 = !aplicarC1"></div>
+    <div class="demo" :class="{c1: aplicarC1}"
+        @click="aplicarC1 = !aplicarC1"></div>
     <div class="demo"></div>
     <div class="demo"></div>
 </div>
 
 <script>
     new Vue({
-        el: "#app",
+        el: '#app',
         data: {
             aplicarC1: false
         }

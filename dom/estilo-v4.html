@@ -1,7 +1,5 @@
 <script src="https://unpkg.com/vue"></script>
-
 <style>
-
     .caixas {
         display: flex;
         justify-content: space-around;
@@ -13,6 +11,21 @@
         background-color: gray;
     }
 
+    .c1 {
+        background-color: red;
+    }
+
+    .c2 {
+        background-color: green;
+    }
+
+    .c3 {
+        background-color: blue;
+    }
+
+    .girar {
+        transform: rotate(45deg);
+    }
 </style>
 
 <div id="app">
@@ -28,7 +41,7 @@
 
 <script>
     new Vue({
-        el: "#app",
+        el: '#app',
         data: {
             cor: 'red',
             largura: 100,

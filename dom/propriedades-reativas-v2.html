@@ -1,23 +1,39 @@
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/vue"></script>
 
 <div id="app">
-  <button v-on:click="aumentar">Aumentar</button>
-  <p>Contador: {{ contador }}</p>
-  <p>Resultado: {{ resultado }}</p>
+    <button v-on:click="aumentar">Aumentar</button>
+    <button v-on:click="contador2++">Aumentar 2</button>
+    <button v-on:click="diminuir">Diminuir</button>
+    <p>Contador: {{ contador }} | {{ contador2 }}</p>
+    <p>Resultado: {{ resultado }}</p>
 </div>
 
 <script>
-  new Vue({
-    el: "#app",
-    data: {
-      contador: 0,
-      resultado: ''
-    },
-    methods: {
-      aumentar() {
-        this.contador++
-        this.resultado = this.contador >= 5 ? 'Maior ou igual a 5' : 'Menor que 5'
-      }
-    }
-  })
+    new Vue({
+        el: '#app',
+        data: {
+            contador: 0,
+            contador2: 0,
+        },
+        computed: {
+            resultado() {
+                console.log('metodo computed resultado chamado...')
+                return this.contador >= 5 ?
+                    'Maior ou igual a 5' : 'Menor que 5'
+            }
+        },
+        methods: {
+            aumentar() {
+                this.contador++
+            },
+            diminuir() {
+                this.contador--
+            },
+            // resultado() {
+            //     console.log('método resultado chamado...')
+            //     return this.contador >= 5 ?
+            //         'Maior ou igual a 5' : 'Menor que 5'
+            // }
+        }
+    })
 </script>

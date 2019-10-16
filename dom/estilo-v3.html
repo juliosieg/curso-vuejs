@@ -1,7 +1,5 @@
 <script src="https://unpkg.com/vue"></script>
-
 <style>
-
     .caixas {
         display: flex;
         justify-content: space-around;
@@ -26,17 +24,17 @@
     }
 
     .girar {
-        transform: rotate(45deg);   
+        transform: rotate(45deg);
     }
-
 </style>
 
 <div id="app">
     <div class="caixas">
-        <div class="demo" :class="estilo1" 
+        <div class="demo" :class="estilo1"
             @click="aplicarC1 = !aplicarC1"></div>
-        <div class="demo"></div>
-        <div class="demo" :class="[classeCSS, {'girar': aplicarGirar}]"></div>
+        <div class="demo" :class="estilo1"></div>
+        <div class="demo"
+            :class="[classeCSS, {girar: aplicarGirar}]"></div>
     </div>
     <hr>
     <input type="text" v-model="classeCSS">
@@ -44,7 +42,7 @@
 
 <script>
     new Vue({
-        el: "#app",
+        el: '#app',
         data: {
             aplicarC1: false,
             classeCSS: 'c1',
@@ -54,7 +52,7 @@
             estilo1() {
                 return {
                     c1: this.aplicarC1,
-                    c2: !this.aplicarC1
+                    c2: !this.aplicarC1,
                 }
             }
         }
